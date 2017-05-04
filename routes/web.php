@@ -41,3 +41,10 @@ $app->get('/users/{username}/profile', ['as' => 'profile', function ($username) 
 	return "Nama route = profile. walaupun di address bar /users/$username/profile";
 
 }]);
+
+
+$app->get('/articles', 'ArticleController@index');
+$app->get('/articles/{id}', 'ArticleController@getArticle');
+$app->post('/articles', 'ArticleController@saveArticle');
+$app->put('/articles/{id}', 'ArticleController@updateArticle');
+$app->delete('/articles/{id}', 'ArticleController@deleteArticle');
